@@ -19,7 +19,7 @@ export const Content = () => {
       <ListLastCategories categories={ categories }/>
       {
         categories.map( ( category ) => (
-          <GifGrid key={ category } category={ category }/>
+          <GifGrid key={ category } category={ category } setCategories={ setCategories } />
         ))
       }
 

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { SubTitle } from './SubTitle'
 import { GifCard } from './GifCard'
-import PropTypes from 'prop-types';
 
-export const GifGrid = ({ category }) => {
+export const GifGrid = ({ category, setCategories }) => {
 
   const [images, setImages] = useState([]);
 
@@ -14,7 +13,7 @@ export const GifGrid = ({ category }) => {
   const getGifs = async () => {
 
     const apiKey = `uASOXFkx9XvI9NZKfBssPF3O6v7at0LE`
-    const url = `https://api.giphy.com/v1/gifs/search?q=${ category }&limit=15&api_key=${ apiKey }`
+    const url = `https://api.giphy.com/v1/gifs/search?q=${ encodeURI(category) }&limit=15&api_key=${ apiKey }`
 
     const resp = await fetch( url );
 
@@ -36,6 +35,8 @@ export const GifGrid = ({ category }) => {
 
   const handleDeleteGridItems = () => {
     console.log('Delete:', category)
+    setCategories( allCat => allCat.filter( item => item !== category ));
+
   }
 
 
@@ -61,11 +62,3 @@ export const GifGrid = ({ category }) => {
     </div>
   )
 }
-
-
-
-GifGrid.propTypes = {
-
-  setCategories: PropTypes.func.isRequired
-
-} 
