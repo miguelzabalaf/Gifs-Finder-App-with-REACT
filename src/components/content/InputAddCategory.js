@@ -17,7 +17,14 @@ export const InputAddCategory = ({ setCategories }) => {
     // Para evitar el recardado de la página.
     if( inputValue.trim().length >= 3 ) {
       console.log('Submit Hecho con el siguinete texto:', inputValue);
-      setCategories( cats => [inputValue, ...cats ] )
+      setCategories( cats => {
+        const valueInclude = cats.includes(inputValue);
+        if ( valueInclude ) {
+          return cats
+        } else {
+          return [inputValue, ...cats ]  
+        }
+      });
       setinputValue('')
     }
   }

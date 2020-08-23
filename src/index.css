@@ -154,6 +154,7 @@ button svg {
 .title .featured {
   font-weight: 600;
   color: #61dafb;
+  animation: 1s ease-in-out effectTitle;
 }
 
 .subtitle {
@@ -352,5 +353,17 @@ hr {
     
     opacity: 1;
 
+  }
+}
+
+@keyframes effectTitle {
+  from {
+
+    color: #FFF;
+    
+  } to {
+
+    color: #61dafb;
+    
   }
 }
