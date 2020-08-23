@@ -4,6 +4,7 @@ import { SubTitle } from './content/SubTitle'
 import { InputAddCategory } from './content/InputAddCategory'
 import { ListLastCategories } from './content/ListLastCategories'
 import { GifGrid } from './content/GifGrid'
+import { NotFoundListOfCategories } from './content/NotFoundListOfCategories'
 
 export const Content = () => {
 
@@ -16,7 +17,7 @@ export const Content = () => {
       <SubTitle text="Developed and designed by Miguel Zabala" />
       <hr/>
       <InputAddCategory setCategories={ setCategories } />
-      <ListLastCategories categories={ categories }/>
+      { categories.length === 0 ? <NotFoundListOfCategories/> : <ListLastCategories categories={ categories }/>  }
       {
         categories.map( ( category ) => (
           <GifGrid key={ category } category={ category } setCategories={ setCategories } />

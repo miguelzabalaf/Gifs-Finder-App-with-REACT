@@ -8,7 +8,7 @@ export const InputAddCategory = ({ setCategories }) => {
 
   const handleInputChange = (event) => {
     const word = event.target.value;
-    console.log(word);
+    // console.log(word);
     setinputValue( word );
   }
 

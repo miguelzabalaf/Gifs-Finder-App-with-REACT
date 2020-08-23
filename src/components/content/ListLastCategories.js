@@ -7,7 +7,6 @@ export const ListLastCategories = ({ categories }) => {
       {
       categories.map( cat => <Category key={ cat } category={ cat } /> )
       }
-      
     </div>
   )
 }
