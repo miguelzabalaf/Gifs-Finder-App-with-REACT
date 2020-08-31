@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Title } from './content/Title'
-import { SubTitle } from './content/SubTitle'
-import { InputAddCategory } from './content/InputAddCategory'
-import { ListLastCategories } from './content/ListLastCategories'
-import { GifGrid } from './content/GifGrid'
-import { NotFoundListOfCategories } from './content/NotFoundListOfCategories'
+import React, { useState } from 'react';
+import { Title } from './content/Title';
+import { SubTitle } from './content/SubTitle';
+import { InputAddCategory } from './content/InputAddCategory';
+import { ListLastCategories } from './content/ListLastCategories';
+import { GifGrid } from './content/GifGrid';
+import { NotFoundListOfCategories } from './content/NotFoundListOfCategories';
 
 export const Content = () => {
 

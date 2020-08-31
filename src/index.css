@@ -316,6 +316,28 @@ hr {
   color: #61dafb;
 }
 
+.notification {
+  max-width: 1000px;
+  background-color: #FF4D4F;
+  padding: 15px 5px;
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  margin: auto;
+  transition: all 0.5s;
+  animation: notification ease-in-out 0.5s;
+}
+
+.notification p {
+  font-size: small;
+}
+
+.messageMinChar {
+  font-size: 10px;
+  color: rgb(197, 0, 0);
+}
+
 @media screen and (min-width: 1010px) {
   .navbarContainer {
     padding: 0 10px;
@@ -364,6 +386,18 @@ hr {
   } to {
 
     color: #61dafb;
+    
+  }
+}
+
+@keyframes notification {
+  from {
+
+    transform: translateY(1050%);
+    
+  } to {
+    
+    transform: translateY(0%);
     
   }
 }

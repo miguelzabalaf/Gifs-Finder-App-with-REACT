@@ -1,14 +1,12 @@
-import React from 'react'
-import { SubTitle } from './SubTitle'
-import { useFetchGifs } from '../../hooks/useFetchGifs'
-import { NotFoundGifs } from './NotFoundGifs'
-import { SlideCategories } from './SlideCategories'
+import React from 'react';
+import { SubTitle } from './SubTitle';
+import { useFetchGifs } from '../../hooks/useFetchGifs';
+import { NotFoundGifs } from './NotFoundGifs';
+import { SlideCategories } from './SlideCategories';
 
 export const GifGrid = ({ category, setCategories }) => {
 
-
   const {  data : images, /*loading*/ } = useFetchGifs( category );
-
 
   const handleDeleteGridItems = () => {
     console.log('Delete:', category)

@@ -1,15 +1,32 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
+import { MessageMinChar } from './MessageMinChar';
 
 export const InputAddCategory = ({ setCategories }) => {
 
   
   const [inputValue, setinputValue] = useState('')
 
+  const [minCharacters, setMinCharacters] = useState({
+    stateInput: true,
+    messageInput: ''
+  })
+
+  const { stateInput, messageInput } = minCharacters
+
   const handleInputChange = (event) => {
+    if ( inputValue.trim().length > 1 ) {
+      setMinCharacters(() => ({
+          stateInput: true,
+          messageInput: ''
+        })
+      )
+    }
     const word = event.target.value;
     // console.log(word);
     setinputValue( word );
+
+
   }
 
   const handleSubmit = (event) => {
@@ -26,11 +43,19 @@ export const InputAddCategory = ({ setCategories }) => {
         }
       });
       setinputValue('')
+    } else {
+      // Message for min 3 characters
+      setMinCharacters(() => ({
+          stateInput: false,
+          messageInput: 'Minimum 3 characters'
+        })
+      )
     }
   }
 
 
   return (
+    <>
     <form className="form" onSubmit={ handleSubmit }>
       <input 
         type="text"
@@ -44,6 +69,10 @@ export const InputAddCategory = ({ setCategories }) => {
       </svg>
       </button>
     </form>
+    {
+      stateInput ? null : <MessageMinChar message={ messageInput } />
+    }
+    </>
   )
 }
 
